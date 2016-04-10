@@ -48,10 +48,11 @@ while True:
     payload = {'uid': binUid}
     response = requests.post('https://entry.1128wnewport.com/api/entry/authenticate', json=payload)
     allowed = response.json()
-    print 'Allowed ' + allowed
     if allowed:
         print 'Opening...'
         GPIO.output(RELAY, GPIO.HIGH)
         time.sleep(3)
         print 'Closing...'
         GPIO.output(RELAY, GPIO.LOW)
+    else:
+        print 'Access denied.'
