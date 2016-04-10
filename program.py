@@ -49,7 +49,7 @@ while True:
     response = requests.post('https://entry.1128wnewport.com/api/entry/authenticate', json=payload)
     allowed = response.json()
     print 'Allowed ' + allowed
-    if allowed
+    if allowed:
         print 'Opening...'
         GPIO.output(RELAY, GPIO.HIGH)
         time.sleep(3)
