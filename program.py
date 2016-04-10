@@ -45,7 +45,8 @@ while True:
         continue
     binUid = '0x{0}'.format(binascii.hexlify(uid))
     print 'Found card with UID: {0}'.format(binUid)
-    response = requests.post('http://requestb.in/u1o5o3u1', data = {'uid':binUid})
+    response = requests.post('https://entry.1128wnewport.com/api/entry/authenticate', data = {'uid':binUid})
+    print response
     print 'Opening...'
     GPIO.output(RELAY, GPIO.HIGH)
     time.sleep(3)
