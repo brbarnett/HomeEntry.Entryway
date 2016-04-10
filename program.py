@@ -43,8 +43,8 @@ while True:
     # Try again if no card is available.
     if uid is None:
         continue
-    binUid = binascii.hexlify(uid)
-    print 'Found card with UID: 0x{0}'.format(binUid)
+    binUid = '0x{0}'.format(binascii.hexlify(uid))
+    print 'Found card with UID: {0}'.format(binUid)
     response = requests.post('http://requestb.in/u1o5o3u1', data = {'uid':binUid})
     print 'Opening...'
     GPIO.output(RELAY, GPIO.HIGH)
