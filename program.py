@@ -45,10 +45,13 @@ while True:
         continue
     binUid = '0x{0}'.format(binascii.hexlify(uid))
     print 'Found card with UID: {0}'.format(binUid)
-    response = requests.post('https://entry.1128wnewport.com/api/entry/authenticate', data = {'uid':binUid})
-    print response.json()
-    print 'Opening...'
-    GPIO.output(RELAY, GPIO.HIGH)
-    time.sleep(3)
-    print 'Closing...'
-    GPIO.output(RELAY, GPIO.LOW)
+    payload = {'uid': binUid}
+    response = requests.post('https://entry.1128wnewport.com/api/entry/authenticate', json=payload)
+    allowed = response.json()
+    print 'Allowed ' + allowed
+    if allowed
+        print 'Opening...'
+        GPIO.output(RELAY, GPIO.HIGH)
+        time.sleep(3)
+        print 'Closing...'
+        GPIO.output(RELAY, GPIO.LOW)
