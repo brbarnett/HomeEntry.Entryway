@@ -1,0 +1,23 @@
+{
+  "name": "entryway-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-post": "^0.1.1",
+    "needle": "^1.0.0",
+    "nfc": "^0.3.1",
+    "node-gyp": "^3.3.1",
+    "node-pre-gyp": "^0.6.26",
+    "pi-spi": "^1.0.1",
+    "pn532": "^0.1.0",
+    "python-shell": "^0.4.0",
+    "serialport": "^2.1.0",
+    "spi": "^0.2.0"
+  }
+}
