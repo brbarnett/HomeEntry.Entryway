@@ -47,8 +47,9 @@ while True:
     print 'Found card with UID: {0}'.format(binUid)
     payload = {'uid': binUid}
     response = requests.post('https://entry.1128wnewport.com/api/entry/authenticate', json=payload)
-    allowed = response.json().active
+    allowed = response.json()['active']
     if allowed:
+        print 'Access granted!'
         print 'Opening...'
         GPIO.output(RELAY, GPIO.HIGH)
         time.sleep(3)
